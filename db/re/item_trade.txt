@@ -4171,6 +4171,7 @@
 //22169,499,100	//
 //22173,499,100	//
 //22204,499,100	//
+22243,499,100	// Mamaragan
 22508,507,100	// Para_Team_Mark_
 22510,475,100	// King_Wolf_Scroll
 22511,467,100	// Fenrir_Card__
@@ -4814,6 +4815,7 @@
 //32221,499,100	//
 41220,439,100	// Grace_Attack_Boots1
 41221,439,100	// Grace_Magic_Boots1
+41999,475,100	// Newbie_Package
 42039,475,100	// VIP_Pass_1
 42040,475,100	// VIP_Pass_7
 42041,475,100	// VIP_Pass_15
@@ -4822,6 +4824,8 @@
 42045,475,100	// Silver_Package
 42046,475,100	// Gold_Package
 42047,475,100	// Diamond_Package
+42050,1,100	// Jasper_Crest_(jRO)
+42051,1,100	// Jasper_Crest_(jRO)
 44406,471,100	// Red_Pitaya_Tail
 44407,471,100	// Yellow_Pitaya_Tail
 44408,471,100	// Blue_Pitaya_Tail
@@ -5131,6 +5135,15 @@
 60270,475,100	// VIP_30
 60271,475,100	// Realism_Gemstone
 60272,475,100	// Godly_Gemstone
+60273,475,100	// Voting_Charm
+60274,475,100	// Event_Snowball_Charm
+60275,475,100	// Christmas_Toy_Charm
+60277,475,100	// Collection_Amber_Crystal
+60278,475,100	// Collection_Aqua_Crystal
+60279,475,100	// Collection_Nature_Crystal
+60280,475,100	// Collection_Light_Crystal
+60281,475,100	// Collection_Darkness_Crystal
+60282,475,100	// Collection_Heart_Crystal
 61031,9,100	// Sakura_Leaf_Effect
 61033,9,100	// Temporal_Charm
 61034,9,100	// Bronze_Card_Charm
@@ -5355,17 +5368,22 @@
 500016,447,100	// HS_T_Sword
 510017,447,100	// CA_B_Dagger
 510018,447,100	// MF_B_Dagger
+510026,499,100	// Krieger_Dagger1
+520003,447,100	// Scythe_of_Ice_Flame
 530005,447,100	// BC_B_Spear
 540009,447,100	// SB_B_Book
 550010,447,100	// ES_B_Stick
 550011,447,100	// AN_B_Wand
 560006,447,100	// PS_B_Knuckle
 560007,447,100	// CP_B_Knuckle
+560011,499,100	// BF_Knuckle1
 570010,447,100	// MV_B_Violin
+570012,499,100	// BF_Instrument2
 580010,447,100	// MV_B_Whip
 590008,447,100	// AK_B_Mace
 590009,447,100	// AC_B_Club
 590010,447,100	// DD_B_Mace
+590014,447,100	// Meer_Sceptre
 600012,447,100	// IW_B_T_Sword
 610013,447,100	// RC_B_Katar
 620003,447,100	// PT_B_Axe
@@ -5376,3 +5394,4 @@
 700015,447,100	// AS_B_Bow
 700016,447,100	// SB_B_Bow
 700017,447,100	// RS_B_Bow
+700021,499,100	// Tourist_Bow

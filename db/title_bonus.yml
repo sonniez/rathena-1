@@ -1,0 +1,131 @@
+###########################################################################
+# Title Bonus System by Easycore
+#
+#   GitHash: ac03cea31dc7569beea38144adf0d1b97d063932
+###########################################################################
+# Usage: Replace TitleID by the ID of the Title. Script Bonus only accepts
+#        bonus scripts, see doc/item_bonus.txt for documentation.
+#
+#   TitleID: |
+#       { script bonus }
+###########################################################################
+
+Header:
+    Version: 1
+    Type: TITLE_BONUS
+1000: | #Junction of life
+    { bonus bLuk,1; bonus bMaxHP,50; }
+1001: | #Specialist
+    { bonus bAspd,2; }
+1002: | #Expert
+    { bonus bCritical,10; }
+1003: | #Master
+    { bonus bAllStats,1; }
+1004: | #Grand Master
+    { bonus bAllStats,1; }
+1005: | #Novice Adventurer
+    { bonus bAllStats,1; }
+1006: | #Veteran Adventurer
+    { bonus bAllStats,1; }
+1007: | #Master Adventurer
+    { bonus bAllStats,1; }
+1008: | #of Dragon
+    { bonus bAllStats,1; }
+1009: | #of Madness
+    { bonus bAllStats,1; }
+1010: | #Steel Body
+    { bonus bAllStats,1; }
+1011: | #The Yellow Flash
+    { bonus bAllStats,1; }
+1012: | #Keen
+    { bonus bAllStats,1; }
+1013: | #Lucky
+    { bonus bAllStats,1; }
+1014: | #Incarnation of Love and Hatred
+    { bonus bAllStats,1; }
+1015: | #Maniac
+    { bonus bAllStats,1; }
+1016: | #Reborn
+    { bonus bAllStats,1; }
+1017: | #Bloody Red
+    { bonus bAllStats,1; }
+1018: | #Novice Teleporter
+    { bonus bAllStats,1; }
+1019: | #Mock me yoyo
+    { bonus bAllStats,1; }
+1020: | #Gambler
+    { bonus bAllStats,1; }
+1021: | #Battle Manual Master
+    { bonus bAllStats,1; }
+1022: | #Married Person
+    { bonus bAllStats,1; }
+1023: | #Persistent
+    { bonus bAllStats,1; }
+1024: | #Hard Worker
+    { bonus bAllStats,1; }
+1025: | #Poring Mania
+    { bonus bAllStats,1; }
+1026: | #Back Opener
+    { bonus bAllStats,1; }
+1027: | #Animal Lover
+    { bonus bAllStats,1; }
+1028: | #Devil Contractor
+    { bonus bAllStats,1; }
+1029: | #Monster Girls
+    { bonus bAllStats,1; }
+1030: | #Monster Boys
+    { bonus bAllStats,1; }
+1031: | #Visionary
+    { bonus bAllStats,1; }
+1032: | #Growing Bud
+    { bonus bAllStats,1; }
+1033: | #Family Maker
+    { bonus bAllStats,1; }
+1034: | #VIP
+    { bonus bAllStats,1; }
+1035: | #Orc Slayer
+    { bonus bAllStats,1; }
+1036: | #Orc Hero
+    { bonus bAllStats,1; }
+1037: | #Turtle Slayer
+    { bonus bAllStats,1; }
+1038: | #Dryad Slayer
+    { bonus bAllStats,1; }
+1039: | #Time Slayer
+    { bonus bAllStats,1; }
+1040: | #Raydric Slayer
+    { bonus bAllStats,1; }
+1041: | #Death Slayer
+    { bonus bAllStats,1; }
+1042: | #Undead Slayer
+    { bonus bAllStats,1; }
+1043: | #Strouf Slayer
+    { bonus bAllStats,1; }
+1044: | #Sting Slayer
+    { bonus bAllStats,1; }
+1100: | #Duke 2k
+    { if ( !getmapflag( strcharinfo(3),MF_GVG,0 ) && !getmapflag( strcharinfo(3),MF_PVP,0 )) { bonus bAllStats,3; } }
+1101: | #Marquess 3k
+    { if ( !getmapflag( strcharinfo(3),MF_GVG,0 ) && !getmapflag( strcharinfo(3),MF_PVP,0 )) { bonus bAllStats,5; } }
+1102: | #Earl 5k
+    { if ( !getmapflag( strcharinfo(3),MF_GVG,0 ) && !getmapflag( strcharinfo(3),MF_PVP,0 )) { bonus bAllStats,5; bonus2 bAddClass,Class_All,5; bonus bMatkrate,5; } }
+1103: | #Viscount 7k
+    { if ( !getmapflag( strcharinfo(3),MF_GVG,0 ) && !getmapflag( strcharinfo(3),MF_PVP,0 )) { bonus bAllStats,5; bonus2 bAddClass,Class_All,8; bonus bMatkrate,8; } }
+1104: | #Baron 10k
+    { if ( !getmapflag( strcharinfo(3),MF_GVG,0 ) && !getmapflag( strcharinfo(3),MF_PVP,0 )) { bonus bAllStats,7; bonus2 bAddClass,Class_All,8; bonus bMatkrate,8; } }
+1105: | #Lord 13k
+    { if ( !getmapflag( strcharinfo(3),MF_GVG,0 ) && !getmapflag( strcharinfo(3),MF_PVP,0 )) {bonus bAllStats,7; bonus2 bAddClass,Class_All,10; bonus bMatkrate,10; bonus bPatk,1; bonus bSmatk,1; } }
+1106: | #King 15k
+    { if ( !getmapflag( strcharinfo(3),MF_GVG,0 ) && !getmapflag( strcharinfo(3),MF_PVP,0 )) { bonus bAllStats,7; bonus2 bAddClass,Class_All,13; bonus bMatkrate,13; bonus bPatk,3; bonus bSmatk,3; } }
+1107: | #Demi-God 20k
+    { if ( !getmapflag( strcharinfo(3),MF_GVG,0 ) && !getmapflag( strcharinfo(3),MF_PVP,0 )) { bonus bAllStats,10; bonus2 bAddClass,Class_All,15; bonus bMatkrate,15; bonus bPatk,5; bonus bSmatk,5; } }
+1108: | #God 25k
+    { if ( !getmapflag( strcharinfo(3),MF_GVG,0 ) && !getmapflag( strcharinfo(3),MF_PVP,0 )) { bonus bAllStats,10; bonus2 bAddClass,Class_All,17; bonus bMatkrate,17; bonus bPatk,7; bonus bSmatk,7; } }
+1109: | #God of War 30k
+    { if ( !getmapflag( strcharinfo(3),MF_GVG,0 ) && !getmapflag( strcharinfo(3),MF_PVP,0 )) { bonus bAllStats,10; bonus2 bAddClass,Class_All,20; bonus bMatkrate,20; bonus bPatk,10; bonus bSmatk,10; } }
+1110: | #Beyonder 40k
+    { if ( !getmapflag( strcharinfo(3),MF_GVG,0 ) && !getmapflag( strcharinfo(3),MF_PVP,0 )) { bonus bAllStats,10; bonus2 bAddClass,Class_All,23; bonus bMatkrate,23; bonus bPatk,13; bonus bSmatk,13; } }
+1111: | #One for All 50k
+    { if ( !getmapflag( strcharinfo(3),MF_GVG,0 ) && !getmapflag( strcharinfo(3),MF_PVP,0 )) { bonus bAllStats,10; bonus2 bAddClass,Class_All,25; bonus bMatkrate,25; bonus bPatk,15; bonus bSmatk,15; } }
+1112: | #Almighty 60k
+    { if ( !getmapflag( strcharinfo(3),MF_GVG,0 ) && !getmapflag( strcharinfo(3),MF_PVP,0 )) { bonus bAllStats,10; bonus2 bAddClass,Class_All,30; bonus bMatkrate,30; bonus bPatk,20; bonus bSmatk,20; } }

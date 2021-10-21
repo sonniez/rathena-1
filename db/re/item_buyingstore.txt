@@ -2237,6 +2237,11 @@
 48428  // Strong_Deniro_Card
 48429  // Strong_Vitata_Card
 48430  // Powerful_Maya_Card
+48433  // Queen_Medusa_Card
+48434  // Blade_King_Card
+48435  // Chronos_Card
+48436  // Orconio_Card
+48437  // Orpeo_Card
 60075  // 15k_Ticket
 60076  // 20k_Ticket
 61104  // Box_Colornick

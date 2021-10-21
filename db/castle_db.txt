@@ -60,3 +60,6 @@
 41,te_prtcas03,Gloria 3,Manager_TE#Wigner
 42,te_prtcas04,Gloria 4,Manager_TE#Heine
 43,te_prtcas05,Gloria 5,Manager_TE#Nerious
+
+// Custom WOE Castle
+44,grandarena,Arena Emperium,Agit#grandarena			// Custom

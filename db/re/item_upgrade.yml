@@ -502,6 +502,16 @@ Body:
   - Item: 1836 #타노스의너클
   - Item: 16028 #타노스의망치
   - Item: 28100 #타노스의도끼
+  - Item: 500024 #
+  - Item: 530012 #
+  - Item: 560017 #
+  - Item: 570016 #
+  - Item: 580016 #
+  - Item: 590020 #
+  - Item: 600016 #
+  - Item: 610019 #
+  - Item: 620009 #
+  - Item: 700029 #
   Result: |
     callfunc("F_Lapine_Gray_Charcoal_Range", .@opts[0], .@vals[0], .@opts[1], .@vals[1]);
     .@params[0] = 0;
@@ -517,6 +527,13 @@ Body:
   - Item: 13441 #타노스의검
   - Item: 1933 #타노스의바이올린
   - Item: 1988 #타노스의윕소드
+  - Item: 510030 #
+  - Item: 530012 #
+  - Item: 550023 #
+  - Item: 570016 #
+  - Item: 580016 #
+  - Item: 590020 #
+  - Item: 640017 #
   Result: |
     callfunc("F_Lapine_Gray_Charcoal_Magic", .@opts[0], .@vals[0], .@opts[1], .@vals[1]);
     .@params[0] = 0;
@@ -537,6 +554,16 @@ Body:
   - Item: 16028 #타노스의망치
   - Item: 28100 #타노스의도끼
   - Item: 1933 #타노스의바이올린
+  - Item: 500024 #
+  - Item: 530012 #
+  - Item: 560017 #
+  - Item: 570016 #
+  - Item: 580016 #
+  - Item: 590020 #
+  - Item: 600016 #
+  - Item: 610019 #
+  - Item: 620009 #
+  - Item: 700029 #
   Result: |
     callfunc("F_Lapine_Gray_Charcoal_Melee", .@opts[0], .@vals[0], .@opts[1], .@vals[1]);
     .@params[0] = 0;
@@ -1054,6 +1081,196 @@ Body:
   - Item: 24473 #S_Arms_Weapon
   - Item: 24474 #S_Arms_Pendant
   - Item: 24475 #S_Arms_Earing
+  - Item: 24476 #
+  - Item: 24477 #
+  - Item: 24478 #
+  - Item: 24479 #
+  - Item: 24480 #
+  - Item: 24481 #
+  - Item: 24482 #
+  - Item: 24483 #
+  - Item: 24484 #
+  - Item: 24485 #
+  - Item: 24486 #
+  - Item: 24487 #
+  - Item: 24488 #
+  - Item: 24489 #
+  - Item: 24490 #
+  - Item: 24491 #
+  - Item: 24492 #
+  - Item: 24493 #
+  - Item: 24494 #
+  - Item: 24495 #
+  - Item: 24496 #
+  - Item: 24497 #
+  - Item: 24498 #
+  - Item: 24499 #
+  - Item: 24500 #
+  - Item: 24501
+  - Item: 24502
+  - Item: 24503
+  - Item: 24504
+  - Item: 24505
+  - Item: 24506
+  - Item: 24507
+  - Item: 24508
+  - Item: 24509
+  - Item: 24510
+  - Item: 24511
+  - Item: 24512
+  - Item: 24513
+  - Item: 24514
+  - Item: 24515
+  - Item: 24516
+  - Item: 24517
+  - Item: 24518
+  - Item: 24519
+  - Item: 24520
+  - Item: 24521
+  - Item: 24522
+  - Item: 24523
+  - Item: 24524
+  - Item: 24525
+  - Item: 24526
+  - Item: 24527
+  - Item: 24528
+  - Item: 24529
+  - Item: 24530
+  - Item: 24531
+  - Item: 24532
+  - Item: 24533
+  - Item: 24534
+  - Item: 24535
+  - Item: 24536
+  - Item: 24537
+  - Item: 24538
+  - Item: 24539
+  - Item: 24540
+  - Item: 24541
+  - Item: 24542
+  - Item: 24543
+  - Item: 24544
+  - Item: 24545
+  - Item: 24546
+  - Item: 24547
+  - Item: 24548
+  - Item: 24549
+  - Item: 24550
+  - Item: 24551
+  - Item: 24552
+  - Item: 24553
+  - Item: 24554
+  - Item: 24555
+  - Item: 24556
+  - Item: 24557
+  - Item: 24558
+  - Item: 24559
+  - Item: 24560
+  - Item: 24561
+  - Item: 24562
+  - Item: 24563
+  - Item: 24564
+  - Item: 24565
+  - Item: 24566
+  - Item: 24567
+  - Item: 24568
+  - Item: 24569
+  - Item: 24570
+  - Item: 24571
+  - Item: 24572
+  - Item: 24573
+  - Item: 24574
+  - Item: 24575
+  - Item: 24576
+  - Item: 24577
+  - Item: 24578
+  - Item: 24579
+  - Item: 24580
+  - Item: 24581
+  - Item: 24582
+  - Item: 24583
+  - Item: 24601
+  - Item: 24602
+  - Item: 24603
+  - Item: 24604
+  - Item: 24605
+  - Item: 24606
+  - Item: 24607
+  - Item: 24608
+  - Item: 24609
+  - Item: 24610
+  - Item: 24611
+  - Item: 24612
+  - Item: 24613
+  - Item: 24614
+  - Item: 24615
+  - Item: 24616
+  - Item: 24617
+  - Item: 24618
+  - Item: 24619
+  - Item: 24620
+  - Item: 24621
+  - Item: 24622
+  - Item: 24623
+  - Item: 24624
+  - Item: 24625
+  - Item: 24626
+  - Item: 24627
+  - Item: 24628
+  - Item: 24629
+  - Item: 24630
+  - Item: 24631
+  - Item: 24632
+  - Item: 24633
+  - Item: 24634
+  - Item: 24635
+  - Item: 24636
+  - Item: 24637
+  - Item: 24638
+  - Item: 24639
+  - Item: 24640
+  - Item: 24641
+  - Item: 24642
+  - Item: 24643
+  - Item: 24644
+  - Item: 24645
+  - Item: 24646
+  - Item: 24647
+  - Item: 24648
+  - Item: 24649
+  - Item: 24650
+  - Item: 24651
+  - Item: 24652
+  - Item: 24653
+  - Item: 24654
+  - Item: 24655
+  - Item: 24656
+  - Item: 24657
+  - Item: 24658
+  - Item: 24659
+  - Item: 24660
+  - Item: 24661
+  - Item: 24662
+  - Item: 24663
+  - Item: 24664
+  - Item: 24665
+  - Item: 24666
+  - Item: 24667
+  - Item: 24668
+  - Item: 24669
+  - Item: 24670
+  - Item: 24671
+  - Item: 24672
+  - Item: 24673
+  - Item: 24674
+  - Item: 24675
+  - Item: 24676
+  - Item: 24677
+  - Item: 24678
+  - Item: 24679
+  - Item: 24680
+  - Item: 24681
+  - Item: 24682
   Result: |
     callfunc("F_Lapine_Shadow_Refine_Hammer", .@refine);
     getitem2(@last_lapine_id,1,1,.@refine,0,@last_lapine_card1,@last_lapine_card2,@last_lapine_card3,@last_lapine_card4);
@@ -2091,7 +2308,89 @@ Body:
   - Item: 24580
   - Item: 24581
   - Item: 24582
-  - Item: 24583  
+  - Item: 24583 
+  - Item: 24601
+  - Item: 24602
+  - Item: 24603
+  - Item: 24604
+  - Item: 24605
+  - Item: 24606
+  - Item: 24607
+  - Item: 24608
+  - Item: 24609
+  - Item: 24610
+  - Item: 24611
+  - Item: 24612
+  - Item: 24613
+  - Item: 24614
+  - Item: 24615
+  - Item: 24616
+  - Item: 24617
+  - Item: 24618
+  - Item: 24619
+  - Item: 24620
+  - Item: 24621
+  - Item: 24622
+  - Item: 24623
+  - Item: 24624
+  - Item: 24625
+  - Item: 24626
+  - Item: 24627
+  - Item: 24628
+  - Item: 24629
+  - Item: 24630
+  - Item: 24631
+  - Item: 24632
+  - Item: 24633
+  - Item: 24634
+  - Item: 24635
+  - Item: 24636
+  - Item: 24637
+  - Item: 24638
+  - Item: 24639
+  - Item: 24640
+  - Item: 24641
+  - Item: 24642
+  - Item: 24643
+  - Item: 24644
+  - Item: 24645
+  - Item: 24646
+  - Item: 24647
+  - Item: 24648
+  - Item: 24649
+  - Item: 24650
+  - Item: 24651
+  - Item: 24652
+  - Item: 24653
+  - Item: 24654
+  - Item: 24655
+  - Item: 24656
+  - Item: 24657
+  - Item: 24658
+  - Item: 24659
+  - Item: 24660
+  - Item: 24661
+  - Item: 24662
+  - Item: 24663
+  - Item: 24664
+  - Item: 24665
+  - Item: 24666
+  - Item: 24667
+  - Item: 24668
+  - Item: 24669
+  - Item: 24670
+  - Item: 24671
+  - Item: 24672
+  - Item: 24673
+  - Item: 24674
+  - Item: 24675
+  - Item: 24676
+  - Item: 24677
+  - Item: 24678
+  - Item: 24679
+  - Item: 24680
+  - Item: 24681
+  - Item: 24682
   Result: |
     callfunc("F_Lapine_Shadow_Random_Mix", .@opts[0], .@vals[0]);
     .@params[0] = 0;
@@ -3558,3 +3857,199 @@ Body:
   Result: |
     callfunc("F_Lapine_Booster_W_Up_3", .@refine);
     getitem2(@last_lapine_id,1,1,.@refine,0,@last_lapine_card1,@last_lapine_card2,@last_lapine_card3,@last_lapine_card4);
+- Id: 100744 # Hero_LT_Refine_Melee
+  NeedRefineMin: 0
+  NeedOptionNumMin: 0
+  NotSocketEnchantItem: true
+  TargetItem:
+  - Item: 590030 #
+  - Item: 530019 #
+  - Item: 540035 #
+  - Item: 500038 #
+  - Item: 510040 #
+  - Item: 510041 #
+  - Item: 640027 #
+  - Item: 640028 #
+  - Item: 550045 #
+  - Item: 550046 #
+  - Item: 560026 #
+  - Item: 560027 #
+  - Item: 700046 #
+  - Item: 700045 #
+  - Item: 500040 #
+  - Item: 500039 #
+  - Item: 570027 #
+  - Item: 580027 #
+  - Item: 700049 #
+  - Item: 620015 #
+  - Item: 590034 #
+  Result: |
+    callfunc("F_Lapine_Hero_LT_Refine_Melee", .@opts[0], .@vals[0], .@opts[1], .@vals[1]);
+    .@params[0] = 0;
+    getitem3(@last_lapine_id,1,1,@last_lapine_refine,0,@last_lapine_card1,@last_lapine_card2,@last_lapine_card3,@last_lapine_card4,.@opts,.@vals,.@params);
+- Id: 100745 # Hero_LT_Refine_Magic
+  NeedRefineMin: 0
+  NeedOptionNumMin: 0
+  NotSocketEnchantItem: true
+  TargetItem:
+  - Item: 590030 #
+  - Item: 530019 #
+  - Item: 540035 #
+  - Item: 500038 #
+  - Item: 510040 #
+  - Item: 510041 #
+  - Item: 640027 #
+  - Item: 640028 #
+  - Item: 550045 #
+  - Item: 550046 #
+  - Item: 560026 #
+  - Item: 560027 #
+  - Item: 700046 #
+  - Item: 700045 #
+  - Item: 500040 #
+  - Item: 500039 #
+  - Item: 570027 #
+  - Item: 580027 #
+  - Item: 700049 #
+  - Item: 620015 #
+  - Item: 590034 #
+  Result: |
+    callfunc("F_Lapine_Hero_LT_Refine_Magic", .@opts[0], .@vals[0], .@opts[1], .@vals[1]);
+    .@params[0] = 0;
+    getitem3(@last_lapine_id,1,1,@last_lapine_refine,0,@last_lapine_card1,@last_lapine_card2,@last_lapine_card3,@last_lapine_card4,.@opts,.@vals,.@params);
+- Id: 100479 # Sakray_Fury
+  NeedRefineMin: 0
+  NeedOptionNumMin: 0
+  NotSocketEnchantItem: true
+  TargetItem:
+  - Item: 600014 #
+  - Item: 630009 #
+  - Item: 500019 #
+  - Item: 530010 #
+  - Item: 620006 #
+  - Item: 590016 #
+  - Item: 590017 #
+  - Item: 500020 #
+  - Item: 640014 #
+  - Item: 640015 #
+  - Item: 550019 #
+  - Item: 540014 #
+  - Item: 540015 #
+  - Item: 550020 #
+  - Item: 560012 #
+  - Item: 560013 #
+  - Item: 610016 #
+  - Item: 510027 #
+  - Item: 700022 #
+  - Item: 510028 #
+  - Item: 700023 #
+  - Item: 700024 #
+  - Item: 570013 #
+  - Item: 580013 #
+  - Item: 700025 #
+  Result: |
+    callfunc("F_Lapine_Sakray_Fury", .@opts[0], .@vals[0], .@opts[1], .@vals[1]);
+    .@params[0] = 0;
+    getitem3(@last_lapine_id,1,1,@last_lapine_refine,0,@last_lapine_card1,@last_lapine_card2,@last_lapine_card3,@last_lapine_card4,.@opts,.@vals,.@params);
+- Id: 100480 # Sakray_Fury2
+  NeedRefineMin: 0
+  NeedOptionNumMin: 0
+  NotSocketEnchantItem: true
+  TargetItem:
+  - Item: 600014 #
+  - Item: 630009 #
+  - Item: 500019 #
+  - Item: 530010 #
+  - Item: 620006 #
+  - Item: 590016 #
+  - Item: 590017 #
+  - Item: 500020 #
+  - Item: 640014 #
+  - Item: 640015 #
+  - Item: 550019 #
+  - Item: 540014 #
+  - Item: 540015 #
+  - Item: 550020 #
+  - Item: 560012 #
+  - Item: 560013 #
+  - Item: 610016 #
+  - Item: 510027 #
+  - Item: 700022 #
+  - Item: 510028 #
+  - Item: 700023 #
+  - Item: 700024 #
+  - Item: 570013 #
+  - Item: 580013 #
+  - Item: 700025 #
+  Result: |
+    callfunc("F_Lapine_Sakray_Fury2", .@opts[0], .@vals[0], .@opts[1], .@vals[1], .@opts[2], .@vals[2]);
+    .@params[0] = 0;
+    getitem3(@last_lapine_id,1,1,@last_lapine_refine,0,@last_lapine_card1,@last_lapine_card2,@last_lapine_card3,@last_lapine_card4,.@opts,.@vals,.@params);
+- Id: 100485 # Sakray_Regret
+  NeedRefineMin: 0
+  NeedOptionNumMin: 0
+  NotSocketEnchantItem: true
+  TargetItem:
+  - Item: 600014 #
+  - Item: 630009 #
+  - Item: 500019 #
+  - Item: 530010 #
+  - Item: 620006 #
+  - Item: 590016 #
+  - Item: 590017 #
+  - Item: 500020 #
+  - Item: 640014 #
+  - Item: 640015 #
+  - Item: 550019 #
+  - Item: 540014 #
+  - Item: 540015 #
+  - Item: 550020 #
+  - Item: 560012 #
+  - Item: 560013 #
+  - Item: 610016 #
+  - Item: 510027 #
+  - Item: 700022 #
+  - Item: 510028 #
+  - Item: 700023 #
+  - Item: 700024 #
+  - Item: 570013 #
+  - Item: 580013 #
+  - Item: 700025 #
+  Result: |
+    callfunc("F_Lapine_Sakray_Regret", .@opts[0], .@vals[0], .@opts[1], .@vals[1]);
+    .@params[0] = 0;
+    getitem3(@last_lapine_id,1,1,@last_lapine_refine,0,@last_lapine_card1,@last_lapine_card2,@last_lapine_card3,@last_lapine_card4,.@opts,.@vals,.@params);
+- Id: 100486 # Sakray_Regret2
+  NeedRefineMin: 0
+  NeedOptionNumMin: 0
+  NotSocketEnchantItem: true
+  TargetItem:
+  - Item: 600014 #
+  - Item: 630009 #
+  - Item: 500019 #
+  - Item: 530010 #
+  - Item: 620006 #
+  - Item: 590016 #
+  - Item: 590017 #
+  - Item: 500020 #
+  - Item: 640014 #
+  - Item: 640015 #
+  - Item: 550019 #
+  - Item: 540014 #
+  - Item: 540015 #
+  - Item: 550020 #
+  - Item: 560012 #
+  - Item: 560013 #
+  - Item: 610016 #
+  - Item: 510027 #
+  - Item: 700022 #
+  - Item: 510028 #
+  - Item: 700023 #
+  - Item: 700024 #
+  - Item: 570013 #
+  - Item: 580013 #
+  - Item: 700025 #
+  Result: |
+    callfunc("F_Lapine_Sakray_Regret2", .@opts[0], .@vals[0], .@opts[1], .@vals[1], .@opts[2], .@vals[2]);
+    .@params[0] = 0;
+    getitem3(@last_lapine_id,1,1,@last_lapine_refine,0,@last_lapine_card1,@last_lapine_card2,@last_lapine_card3,@last_lapine_card4,.@opts,.@vals,.@params);
