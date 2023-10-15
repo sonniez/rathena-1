@@ -53,6 +53,10 @@ yamlupgrade: obj_all $(YAMLUPGRADE_OBJ) $(COMMON_DIR_OBJ) $(RAPIDYAML_AR) $(YAML
 	@echo "	LD	$@"
 	@@CXX@ @LDFLAGS@ -o ../../yamlupgrade@EXEEXT@ $(YAMLUPGRADE_OBJ) $(COMMON_DIR_OBJ) ../common/obj/database.o $(RAPIDYAML_AR) $(YAML_CPP_AR) @LIBS@
 
+yamlupgrade: obj_all $(YAMLUPGRADE_OBJ) $(COMMON_DIR_OBJ) $(YAML_CPP_AR)
+	@echo "	LD	$@"
+	@@CXX@ @LDFLAGS@ -o ../../yamlupgrade@EXEEXT@ $(YAMLUPGRADE_OBJ) $(COMMON_DIR_OBJ) ../common/obj/database.o $(YAML_CPP_AR) @LIBS@
+
 clean:
 	@echo "	CLEAN	tool"
 	@rm -rf obj_all/*.o ../../mapcache@EXEEXT@ ../../csv2yaml@EXEEXT@ ../../yaml2sql@EXEEXT@ ../../yamlupgrade@EXEEXT@
