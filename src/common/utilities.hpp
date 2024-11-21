@@ -27,7 +27,7 @@ class cScopeTimer {
 	cScopeTimer();
 };
 
-int levenshtein( const std::string &s1, const std::string &s2 );
+int32 levenshtein( const std::string &s1, const std::string &s2 );
 
 namespace rathena {
 	namespace util {
@@ -278,9 +278,8 @@ namespace rathena {
 
 			if( rathena::util::safe_addition( a, b, result ) ){
 				return cap;
-			}else{
-				return result;
 			}
+			return std::min(result, cap);
 		}
 
 		template <typename T> void tolower( T& string ){
