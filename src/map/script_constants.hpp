@@ -750,6 +750,7 @@
 	export_constant2("bUnbreakableArmor",SP_UNBREAKABLE_ARMOR);
 	export_constant2("bUnbreakableHelm",SP_UNBREAKABLE_HELM);
 	export_constant2("bUnbreakableShield",SP_UNBREAKABLE_SHIELD);
+	export_constant2("bSkillRatio", SP_SKILL_RATIO);
 	export_constant2("bShortAtkRate",SP_SHORT_ATK_RATE);
 	export_constant2("bLongAtkRate",SP_LONG_ATK_RATE);
 	export_constant2("bCritAtkRate",SP_CRIT_ATK_RATE);
@@ -1650,7 +1651,7 @@
 	export_constant(SC_ENTRY_QUEUE_APPLY_DELAY);
 	export_constant(SC_ENTRY_QUEUE_NOTIFY_ADMISSION_TIME_OUT);
 	export_constant(SC_ADAPTATION);
-	export_constant(SC_BASILICA_CELL);
+	export_deprecated_constant(SC_BASILICA_CELL); // Apr. 2025
 	export_constant(SC_LIGHTOFMOON);
 	export_constant(SC_LIGHTOFSUN);
 	export_constant(SC_LIGHTOFSTAR);
@@ -3527,6 +3528,8 @@
 	export_constant(MONSTER_TYPE_25);
 	export_constant(MONSTER_TYPE_26);
 	export_constant(MONSTER_TYPE_27);
+	export_constant(MONSTER_TYPE_ABR_PASSIVE);
+	export_constant(MONSTER_TYPE_ABR_OFFENSIVE);
 
 	/* classes */
 	export_constant(CLASS_NONE);

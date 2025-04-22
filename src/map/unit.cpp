@@ -56,6 +56,12 @@ using namespace rathena;
 	#define MIN_DELAY_SLAVE MAX_ASPD_NOPC * 2
 #endif
 
+// Time frame during which we will send move packets each cell moved after being hit
+// This is needed because damage packets prevent the client from displaying movement for a while
+#ifndef MOVE_REFRESH_TIME
+	#define MOVE_REFRESH_TIME MAX_WALK_SPEED
+#endif
+
 // Directions values
 // 1 0 7
 // 2 . 6
@@ -212,8 +218,13 @@ bool unit_walktoxy_nextcell(block_list& bl, bool sendMove, t_tick tick) {
 		ud->walktimer = INVALID_TIMER;
 	}
 	ud->walktimer = add_timer(tick + speed, unit_walktoxy_timer, bl.id, speed);
-	if (sendMove)
+
+	// Resend move packet when unit was damaged recently
+	if (sendMove || DIFF_TICK(tick, ud->dmg_tick) < MOVE_REFRESH_TIME) {
 		clif_move(*ud);
+		if (bl.type == BL_PC)
+			clif_walkok(reinterpret_cast<map_session_data&>(bl));
+	}
 	return true;
 }
 
@@ -269,9 +280,7 @@ int32 unit_walktoxy_sub(struct block_list *bl)
 
 	if (bl->type == BL_PC) {
 		map_session_data *sd = BL_CAST(BL_PC, bl);
-
 		sd->head_dir = DIR_NORTH;
-		clif_walkok(*sd);
 	}
 #if PACKETVER >= 20170726
 	// If this is a walking NPC and it will use a player sprite
@@ -722,7 +731,7 @@ static TIMER_FUNC(unit_walktoxy_timer)
 
 	ud->walkpath.path_pos++;
 
-	if(unit_walktoxy_nextcell(*bl, (md != nullptr && DIFF_TICK(tick, md->dmgtick) < 3000), tick)) {
+	if(unit_walktoxy_nextcell(*bl, false, tick)) {
 		// Nothing else needs to be done
 	} else if(ud->state.running) { // Keep trying to run.
 		if (!(unit_run(bl, nullptr, SC_RUN) || unit_run(bl, sd, SC_WUGDASH)) )
@@ -1840,7 +1849,7 @@ TIMER_FUNC(unit_resume_running){
 /**
  * Sets the delays that prevent attacks and skill usage considering the bl type
  * Makes sure that delays are not decreased in case they are already higher
- * Currently this function only handles normal attacks, cast begin and parry events
+ * Will also invoke bl type specific delay functions when required
  * @param bl Object to apply attack delay to
  * @param tick Current tick
  * @param event The event that resulted in calling this function
@@ -1879,6 +1888,8 @@ void unit_set_attackdelay(block_list& bl, t_tick tick, e_delay_event event)
 		case BL_MOB:
 			switch (event) {
 				case DELAY_EVENT_ATTACK:
+				case DELAY_EVENT_CASTEND:
+				case DELAY_EVENT_CASTCANCEL:
 					// This represents setting of attack delay (recharge time) that happens for non-PCs
 					attack_delay = status_get_adelay(&bl);
 					break;
@@ -1887,6 +1898,8 @@ void unit_set_attackdelay(block_list& bl, t_tick tick, e_delay_event event)
 					// When monsters use skills, they only get delays on cast end and cast cancel
 					break;
 			}
+			// Set monster-specific delays (inactive AI time, monster skill delays)
+			mob_set_delay(reinterpret_cast<mob_data&>(bl), tick, event);
 			break;
 		case BL_HOM:
 			switch (event) {
@@ -3265,13 +3278,8 @@ static int32 unit_attack_timer_sub(struct block_list* src, int32 tid, t_tick tic
 			ud->skill_id = 0;
 
 		// You can't move during your attack motion
-		if (src->type&battle_config.attack_walk_delay) {
-			// Monsters set their AI inactive instead of having a walkdelay
-			if (md != nullptr)
-				md->next_thinktime = tick + status_get_amotion(src);
-			else
-				unit_set_walkdelay(src, tick, sstatus->amotion, 1);
-		}
+		if (src->type&battle_config.attack_walk_delay)
+			unit_set_walkdelay(src, tick, sstatus->amotion, 1);
 	}
 
 	if(ud->state.attack_continue) {
@@ -3397,11 +3405,10 @@ int32 unit_skillcastcancel(struct block_list *bl, char type)
 		}
 	}
 
+	unit_set_attackdelay(*bl, tick, DELAY_EVENT_CASTCANCEL);
+
 	if (bl->type == BL_MOB) {
 		mob_data& md = reinterpret_cast<mob_data&>(*bl);
-		// Sets cooldowns and attack delay
-		// This needs to happen even if the cast was cancelled
-		mobskill_end(md, tick);
 		md.skill_idx = -1;
 	}
 
@@ -3426,9 +3433,12 @@ void unit_dataset(struct block_list *bl)
 	ud->skilltimer     = INVALID_TIMER;
 	ud->attacktimer    = INVALID_TIMER;
 	ud->steptimer      = INVALID_TIMER;
-	ud->attackabletime =
-	ud->canact_tick    =
-	ud->canmove_tick   = gettick();
+	t_tick tick = gettick();
+	ud->attackabletime = tick;
+	ud->canact_tick = tick;
+	ud->canmove_tick = tick;
+	ud->endure_tick = tick;
+	ud->dmg_tick = 0;
 	ud->sx = 8;
 	ud->sy = 8;
 }
@@ -3986,9 +3996,6 @@ int32 unit_free(struct block_list *bl, clr_type clrtype)
 
 			skill_clear_unitgroup(bl);
 			status_change_clear(bl,1);
-
-			// Do not call the destructor here, it will be done in chrif_auth_delete
-			// sd->~map_session_data();
 			break;
 		}
 		case BL_PET: {
@@ -4017,7 +4024,6 @@ int32 unit_free(struct block_list *bl, clr_type clrtype)
 
 			skill_clear_unitgroup(bl);
 			status_change_clear(bl,1);
-			pd->~pet_data();
 			break;
 		}
 		case BL_MOB: {
@@ -4082,7 +4088,6 @@ int32 unit_free(struct block_list *bl, clr_type clrtype)
 
 			if( md->tomb_nid )
 				mvptomb_destroy(md);
-			md->~mob_data();
 			break;
 		}
 		case BL_HOM:
@@ -4113,8 +4118,6 @@ int32 unit_free(struct block_list *bl, clr_type clrtype)
 
 			skill_clear_unitgroup(bl);
 			status_change_clear(bl,1);
-
-			hd->~homun_data();
 			break;
 		}
 		case BL_MER: {
@@ -4139,8 +4142,6 @@ int32 unit_free(struct block_list *bl, clr_type clrtype)
 
 			skill_clear_unitgroup(bl);
 			status_change_clear(bl,1);
-
-			md->~s_mercenary_data();
 			break;
 		}
 		case BL_ELEM: {
@@ -4164,8 +4165,6 @@ int32 unit_free(struct block_list *bl, clr_type clrtype)
 
 			skill_clear_unitgroup(bl);
 			status_change_clear(bl,1);
-
-			ed->~s_elemental_data();
 			break;
 		}
 	}

@@ -176,6 +176,9 @@ enum e_aegis_monstertype : uint16 {
 	MONSTER_TYPE_25 = 0x1,
 	MONSTER_TYPE_26 = 0xB695,
 	MONSTER_TYPE_27 = 0x8084,
+	// Special AI
+	MONSTER_TYPE_ABR_PASSIVE = 0x21,
+	MONSTER_TYPE_ABR_OFFENSIVE = 0xA5,
 };
 
 /// Aegis monster class types
@@ -370,7 +373,7 @@ struct mob_data {
 	int32 areanpc_id; //Required in OnTouchNPC (to avoid multiple area touchs)
 	int32 bg_id; // BattleGround System
 
-	t_tick next_walktime,next_thinktime,last_linktime,last_pcneartime,dmgtick,last_canmove,last_skillcheck;
+	t_tick next_walktime,next_thinktime,last_linktime,last_pcneartime,last_canmove,last_skillcheck;
 	t_tick trickcasting; // Special state where you show a fake castbar while moving
 	int16 move_fail_count;
 	int16 lootitem_count;
@@ -395,6 +398,7 @@ struct mob_data {
 	uint16 damagetaken;
 
 	e_mob_bosstype get_bosstype();
+	map_session_data* get_mvp_player();
 };
 
 class MobAvailDatabase : public YamlDatabase {
@@ -517,6 +521,8 @@ int32 mob_randomwalk(struct mob_data *md,t_tick tick);
 int32 mob_warpchase(struct mob_data *md, struct block_list *target);
 void mob_setstate(mob_data& md, MobSkillState skillstate);
 bool mob_ai_sub_hard_attacktimer(mob_data &md, t_tick tick);
+TIMER_FUNC(mob_attacked);
+TIMER_FUNC(mob_norm_attacked);
 int32 mob_target(struct mob_data *md,struct block_list *bl,int32 dist);
 int32 mob_unlocktarget(struct mob_data *md, t_tick tick);
 struct mob_data* mob_spawn_dataset(struct spawn_data *data);
@@ -544,9 +550,10 @@ int32 mob_warpslave(struct block_list *bl, int32 range);
 int32 mob_linksearch(struct block_list *bl,va_list ap);
 
 bool mob_chat_display_message (mob_data &md, uint16 msg_id);
-void mobskill_end(mob_data& md, t_tick tick);
+void mobskill_delay(mob_data& md, t_tick tick);
 bool mobskill_use(struct mob_data *md,t_tick tick,int32 event, int64 damage = 0);
 int32 mobskill_event(struct mob_data *md,struct block_list *src,t_tick tick, int32 flag, int64 damage = 0);
+void mob_set_delay(mob_data& md, t_tick tick, e_delay_event event);
 int32 mob_summonslave(struct mob_data *md2,int32 *value,int32 amount,uint16 skill_id);
 int32 mob_countslave(struct block_list *bl);
 int32 mob_count_sub(struct block_list *bl, va_list ap);
